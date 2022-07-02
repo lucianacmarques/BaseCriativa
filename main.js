@@ -36,9 +36,9 @@ function changeHeaderWhenScroll() {
   }
 }
 
-// testimonials swiper carrousell
+// clients swiper carrousell
 const swiper = new Swiper('.swiper-container', {
-  slidesPerView: 1,
+  slidesPerView: 2,
   pagination: {
     el: '.swiper-pagination'
   },
@@ -46,7 +46,7 @@ const swiper = new Swiper('.swiper-container', {
   keyboard: true,
   breakpoints: {
     767: {
-      slidesPerView: 2,
+      slidesPerView: 4,
       setWrapperSize: true
     }
   }
@@ -64,7 +64,8 @@ scrollReveal.reveal(
   `#home .image, #home .text,
   #about .image, #about .text,
   #services header, #services .card,
-  #testimonials header, #testimonials .testimonials
+  #packages header, #packages .card,
+  #clients header, #clients .clients
   #contact .text, #contact .links
   footer .brand, footer .social
   `,

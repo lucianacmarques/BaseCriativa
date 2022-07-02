@@ -33,7 +33,7 @@ img {
   --title-color: hsl(var(--hue) 41% 10%);
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
-  --body-color: hsl(0 0% 99%);
+  --body-color: hsl(0 0% 97%);
 
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
@@ -266,34 +266,6 @@ nav.show div.icon-close {
   height: 100%;
 }
 
-/*#home .image {
-  position: relative;
-  text-align: center;
-  height: 50%;
-  width: 50%;;
-}
-
-#home .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  position: absolute;
-  top: -10%;
-  left: 1%;
-  z-index: 0;
-}
-
-#home .image img {
-  position: relative;
-  text-align: center;
-}
-
-/*#home .image img,
-#home .image::before {
-  border-radius: 0.75rem;
-}*/
-
 #home .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -356,6 +328,7 @@ nav.show div.icon-close {
 }
 
 #services .card {
+  background-color: hsl(0 0% 98.5%);
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: .25rem solid var(--base-color-alt);
@@ -385,6 +358,7 @@ nav.show div.icon-close {
 }
 
 #packages .card {
+  background-color: hsl(0 0% 99.5%);
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: .25rem solid var(--base-color-alt);
@@ -411,57 +385,28 @@ nav.show div.icon-close {
   text-indent: 0.5rem;
 }
 
-/* testimonials */
-#testimonials .container {
+/* clients */
+#clients .container {
   margin-left: 0;
   margin-right: 0;
 }
 
-#testimonials header {
+#clients header {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   margin-bottom: 0;
 }
 
-#testimonials blockquote {
-  padding: 2rem;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-  border-radius: .25rem;
-}
-
-#testimonials blockquote p {
-  position: relative;
-  text-indent: 1.875rem;
-  margin-bottom: 1.5rem;
-  color: var(--title-color);
-}
-
-#testimonials blockquote p span {
-  font: 700 3rem serif;
-  position: absolute;
-  top: -.375rem;
-  left: -1.875rem;
-  color: var(--base-color);
-}
-
-#testimonials cite {
-  display: flex;
-  align-items: center;
-  font-style: normal;
-}
-
-#testimonials cite img {
-  width: 2rem;
-  height: 2rem;
-  object-fit: cover;
-  clip-path: circle();
-  margin-right: .5rem;
+#clients img {
+  filter: gray;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
 }
 
 /* swiper */
 .swiper-slide {
   height: auto;
-  padding: 4rem 1rem;
+  padding: 2rem .5rem;
 }
 
 .swiper-pagination-bullet {
@@ -505,39 +450,38 @@ nav.show div.icon-close {
   color: var(--base-color);
 }
 
+#contact ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#contact ul li a:hover {
+  text-decoration: none;
+  color: var(--base-color);
+}
+
 /* footer */
 footer {
-  background: var(--footer-color);
+  background: var(--body-color);
 }
 
 footer.section {
-  padding: 4rem 0;
+  padding: 3rem 0;
 }
 
 footer .logo {
-  display: inline-block;
   margin-bottom: 1.5rem;
+  height: 1rem;
+  width: 1rem;
   /* html "a" por padrão inline, não recebe margin, assim podemos alterar para inline-block */
 }
 
-footer .brand p {
-  color: var(--text-color-light);
-  margin-bottom: 0.75rem;
-}
-
-footer i {
-  font-size: 1.5rem;
-  color: var(--text-color-light);
-}
-
-footer .social a {
-  margin-right: 2rem;
-  transition: 0.3s;
-  display: inline-block;
-}
-
-footer .social a:hover {
-  transform: translateY(-8px);
+footer .credits,
+footer .credits a {
+  font-size: .7rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
 }
 
 /* bacj to top */
@@ -584,7 +528,7 @@ footer .social a:hover {
   }
 
   .section header,
-  #testimonials header {
+  #clients header {
     max-width: 32rem;
     text-align: center;
     margin-left: auto;
@@ -657,7 +601,11 @@ footer .social a:hover {
     padding-right: 3rem;
   }
 
-  #testimonials .container {
+  #packages .cards {
+    display: flex;
+  }
+
+  #clients .container {
     margin-left: auto;
     margin-right: auto;
   }
@@ -671,19 +619,27 @@ footer .social a:hover {
     max-width: 25rem;
   }
 
-  footer.section {
-    padding: 3.75rem 0;
+  footer {
+    background: var(--body-color);
   }
-
-  footer .container {
-    grid-auto-flow: column;
+  
+  footer.section {
+    padding: 3rem 0;
+  }
+  
+  footer .brand {
+    display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
+  
   footer .logo {
-    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    height: 10rem;
+    width: 10rem;
+    /* html "a" por padrão inline, não recebe margin, assim podemos alterar para inline-block */
   }
+
 
 }
 
