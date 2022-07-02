@@ -115,13 +115,15 @@ body {
 
 .section .subtitle {
   font-size: var(--subtitle-font-size);
+  text-align: justify;
 }
 
 .section header {
   margin-bottom: 1rem;
 }
 
-.section header strong {
+#about strong,
+#services strong {
   color: var(--base-color);
 }
 
@@ -320,6 +322,7 @@ nav.show div.icon-close {
 #about .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
+  text-align: justify;
 }
 
 /* services */
@@ -363,10 +366,14 @@ nav.show div.icon-close {
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: .25rem solid var(--base-color-alt);
   border-radius: .25rem .25rem 0 0;
-  text-align: center;
+  text-align: left;
 }
 
-#packages .blockquote {
+#packages .card .scheme.custom {
+  text-align: justify;
+}
+
+#packages .scheme {
   display: flex;
   justify-content: first baseline;
   align-items: center;
@@ -376,11 +383,11 @@ nav.show div.icon-close {
   margin-bottom: 1.5rem;
 }
 
-#packages .blockquote i {
+#packages .scheme i {
   color: black;
 }
 
-#packages .blockquote p {
+#packages .scheme p {
   color: var(--base-color-alt);
   text-indent: 0.5rem;
 }
@@ -397,11 +404,11 @@ nav.show div.icon-close {
   margin-bottom: 0;
 }
 
-#clients img {
+/*#clients img {
   filter: gray;
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
-}
+}*/
 
 /* swiper */
 .swiper-slide {
@@ -583,7 +590,7 @@ footer .credits a {
   #home .text {
     order: 0;
     max-width: 24rem;
-    text-align: left;
+    text-align: justify;
   }
 
   #about .container {
@@ -591,18 +598,27 @@ footer .credits a {
     margin: 0 auto;
   }
 
-  /* fr = fração fçexivel */
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   .card {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 
+  /* fr = fração fçexivel */
+  #services .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #services .subtitle,
+  #packages .subtitle {
+    text-align: center;
+  }
+
   #packages .cards {
-    display: flex;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #packages .scheme {
+    font-size: 1.1rem;
   }
 
   #clients .container {
@@ -627,16 +643,16 @@ footer .credits a {
     padding: 3rem 0;
   }
   
-  footer .brand {
+  footer .final {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   
-  footer .logo {
+  footer .brand {
     margin-bottom: 1.5rem;
-    height: 10rem;
-    width: 10rem;
+    height: 12rem;
+    width: 12rem;
     /* html "a" por padrão inline, não recebe margin, assim podemos alterar para inline-block */
   }
 
